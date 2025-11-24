@@ -22,13 +22,13 @@ public class Main {
         n = Integer.parseInt(inputs[0]);
         m = Integer.parseInt(inputs[1]);
 
-        bt(0);
+        bt(0,1);
         bw.close();
 
     }
 
 
-    public static void bt(final int location) throws IOException {
+    public static void bt(final int location, final int index) throws IOException {
         if (location == m){
             for(int i=0; i<m; i++){
                 bw.write(Integer.toString(answer[i]) +  " ");
@@ -37,16 +37,11 @@ public class Main {
             bw.flush();
         }
 
-        for(int i=1; i<=n; i++){
+        for(int i=index; i<=n; i++){
             if(!visited[i]){
-
-                if (  location > 0 && answer[location-1] > i){
-                    continue;
-                }
-
-                visited[i] = true;
                 answer[location] = i;
-                bt(location+1);
+                visited[i] = true;
+                bt(location+1, i + 1);
                 visited[i] = false;
             }
         }
