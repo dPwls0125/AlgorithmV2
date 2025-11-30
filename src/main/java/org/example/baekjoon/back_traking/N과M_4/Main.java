@@ -14,13 +14,10 @@ public class Main {
     private static int m;
 
     public static void main(String[] args) throws IOException {
-
         String[] inputs = br.readLine().split(" ");
         n = Integer.parseInt(inputs[0]);
         m = Integer.parseInt(inputs[1]);
-
         permute(0,1);
-
     }
 
     private static void permute(int location, int index) throws IOException {
