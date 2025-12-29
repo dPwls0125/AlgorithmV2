@@ -29,8 +29,8 @@ public class Main {
         bw.close();
     }
 
-    // depth: 현재 몇 개 골랐는지
-    // start: 다음에 고를 수 있는 시작 인덱스
+    // depth: 현재 몇 개 골랐는지.
+    // start: 다음에 고를 수 있는 시작 인덱스.
     static void dfs(int depth, int start) throws IOException {
         if (depth == m) {
             for (int i = 0; i < m; i++) {
