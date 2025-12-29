@@ -53,11 +53,14 @@ public class Main {
             return;
         }
 
+        String prev = "";
+
         // 백트레킹
         for(int i=0; i<list.size(); i++){
-            if(visited[i]) {
-                continue;
-            }
+            if(visited[i]) continue;
+            if(list.get(i).equals(prev)) continue;
+            prev = list.get(i);
+
             answer[location] = list.get(i);
             visited[i] = true;
             dfs(location+1,list);
